@@ -12,6 +12,7 @@
   "author": "Elvis Onobo",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "node-fetch": "^2.6.0"
   }
 }

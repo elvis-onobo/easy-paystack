@@ -6,6 +6,10 @@
 
 'use strict'
 
+/**
+ * Packages
+ */
+const env = require('dotenv').config()
 const fetch = require("node-fetch");
 
 const Paystack = {}
@@ -13,8 +17,8 @@ const Paystack = {}
 /*
  * Get Paystack keys from .env 
  */
-const PK = process.env.PAYSTACK_PUBLIC_KEY
-const SK = process.env.PAYSTACK_SECRET_KEY
+const PK = process.env['PAYSTACK_PUBLIC_KEY']
+const SK = process.env['PAYSTACK_SECRET_KEY']
 
 const BASE_URL = 'https://api.paystack.co'
 
@@ -23,7 +27,7 @@ const BASE_URL = 'https://api.paystack.co'
  */
 module.exports = Paystack
 
-Paystack.account = async function (accountNumber, bankCode, SK) {
+Paystack.account = async function (accountNumber, bankCode) {
 	//takes account number and returns the name of the user that owns the account
 	// use secret key with this endpoint
 
@@ -38,5 +42,5 @@ Paystack.account = async function (accountNumber, bankCode, SK) {
 }
 
 Paystack.bvn = function () {
-	return 'BVN'
+	return `${process.env.PAYSTACK_PUBLIC_KEY}`
 }
