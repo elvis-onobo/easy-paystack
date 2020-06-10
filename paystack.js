@@ -27,10 +27,10 @@ const BASE_URL = 'https://api.paystack.co'
  */
 module.exports = Paystack
 
-Paystack.account = async function (accountNumber, bankCode) {
-	//takes account number and returns the name of the user that owns the account
-	// use secret key with this endpoint
-
+/**
+ * resolved account number and returns the holder's name
+ */
+Paystack.resolveAccount = async function (accountNumber, bankCode) {
 	const response = await fetch(`${BASE_URL}/bank/resolve?account_number=${accountNumber}&bank_code=${bankCode}`, {
 		method: 'GET', // can use GET, POST, PUT, DELETE
 		headers: {
@@ -41,6 +41,16 @@ Paystack.account = async function (accountNumber, bankCode) {
 	return response.json()
 }
 
-Paystack.bvn = function () {
-	return `${process.env.PAYSTACK_PUBLIC_KEY}`
+/**
+ * Resolves BVN and returns the holder's data
+ */
+Paystack.resolveBVN = async function (bvn) {
+	const response = await fetch(`${BASE_URL}/bank/resolve_bvn/${bvn}`, {
+		method: 'GET', // can use GET, POST, PUT, DELETE
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${SK}`
+		}
+	})
+	return response.json()
 }
