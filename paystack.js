@@ -54,3 +54,17 @@ Paystack.resolveBVN = async function (bvn) {
 	})
 	return response.json()
 }
+
+/**
+ * Resolves Card BIN, returns card details
+ */
+Paystack.resolveCardBin = async function (bin) {
+	const response = await fetch(`${BASE_URL}/decision/bin/${bin})`, {
+		method: 'GET', // can use GET, POST, PUT, DELETE
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${SK}`
+		}
+	})
+	return response.json()
+}
