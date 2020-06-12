@@ -1,5 +1,5 @@
 {
-	"name": "paystack",
+	"name": "easy-paystack",
 	"version": "1.0.0",
 	"description": "A package for to help you use Paystack more easily",
 	"main": "index.js",
