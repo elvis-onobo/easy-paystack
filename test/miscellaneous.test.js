@@ -12,3 +12,4 @@ test('returns list of banks', async () => {
 	const data = await Paystack.misc.listBanks()
 	expect(data.status).toBe(true);
 })
+
