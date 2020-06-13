@@ -13,3 +13,7 @@ test('returns list of banks', async () => {
 	expect(data.status).toBe(true);
 })
 
+test('returns countries where Paysack operates', async () => {
+	const data = await Paystack.misc.countries()
+	expect(data.status).toBe(true);
+})
