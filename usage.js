@@ -31,3 +31,11 @@ const banks = Paystack.misc.listBanks()
 
 banks.then(data => console.log(data))
 	.catch(err => console.log(err))
+
+/*
+* List countries where Paystack operates
+*/
+const countries = Paystack.misc.countries()
+
+countries.then(data => console.log(data))
+	.catch(err => console.log(err))
