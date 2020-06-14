@@ -20,10 +20,4 @@ const Paystack = {
  */
 module.exports = Paystack
 
-/*
-* List countries where Paystack operates
-*/
-const matchBVN = Paystack.verify.matchBVN(bvn, accountNumber, bankCode, firstName, lastName)
 
-matchBVN.then(data => console.log(data))
-	.catch(err => console.log(err))
