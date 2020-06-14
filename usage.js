@@ -2,7 +2,7 @@
  * @ Verification
  * resolve an account
  */
-const accountOwner = Paystack.verify.resolveAccount(2003560903, '057')
+const accountOwner = Paystack.verify.resolveAccount(bankAccount, bankCode)
 
 accountOwner.then(data => console.log(data))
 	.catch(err => console.log(err))
@@ -13,6 +13,14 @@ accountOwner.then(data => console.log(data))
 const bvnOwner = Paystack.resolveBVN(bvn)
 
 bvnOwner.then(data => console.log(data))
+	.catch(err => console.log(err))
+
+/*
+ * Checks if the BVN and data submitted matches
+ */
+const matchBVN = Paystack.verify.matchBVN(bvn, accountNumber, bankCode, firstName, lastName)
+
+matchBVN.then(data => console.log(data))
 	.catch(err => console.log(err))
 
 /*
@@ -30,4 +38,12 @@ cardBIN.then(data => console.log(data))
 const banks = Paystack.misc.listBanks()
 
 banks.then(data => console.log(data))
+	.catch(err => console.log(err))
+
+/*
+* List countries where Paystack operates
+*/
+const countries = Paystack.misc.countries()
+
+countries.then(data => console.log(data))
 	.catch(err => console.log(err))
