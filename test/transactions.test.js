@@ -22,3 +22,8 @@ test('Test that a list of transactions carried out on the integration can be ret
 	const data = await Paystack.transactions.listTrx()
 	expect(data.status).toBe(true);
 })
+
+test('Test that a single transaction\'s details can be fetched', async () => {
+	const data = await Paystack.transactions.fetchTrx(461386324)
+	expect(data.status).toBe(true);
+})
