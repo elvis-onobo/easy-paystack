@@ -23,9 +23,9 @@ const Paystack = {
 module.exports = Paystack
 
 
-const listTrx = Paystack.transactions.listTrx()
+const fetchSingleTrx = Paystack.transactions.fetchTrx(461386324)
 
-listTrx.then(data => console.log(data))
+fetchSingleTrx.then(data => console.log(data))
 	.catch(err => console.log(err))
 
 /*
