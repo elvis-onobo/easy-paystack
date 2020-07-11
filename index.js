@@ -23,9 +23,9 @@ const Paystack = {
 module.exports = Paystack
 
 
-const verifyTrx = Paystack.transactions.verifyTrx('qp2lr9313q')
+const listTrx = Paystack.transactions.listTrx()
 
-verifyTrx.then(data => console.log(data))
+listTrx.then(data => console.log(data))
 	.catch(err => console.log(err))
 
 /*

@@ -18,3 +18,7 @@ test('Test that a transaction can be verified', async () => {
 	expect(data.status).toBe(true);
 })
 
+test('Test that a list of transactions carried out on the integration can be retrieved', async () => {
+	const data = await Paystack.transactions.listTrx()
+	expect(data.status).toBe(true);
+})
