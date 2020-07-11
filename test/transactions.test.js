@@ -8,8 +8,13 @@ const bin = process.env['CARD_BIN']
 
 const Paystack = { transactions }
 
-test('Test that a transaction is initialized', async () => {
+test('Test that a transaction can be initialized', async () => {
 	const data = await Paystack.transactions.initialize(100, 'rapknowlogy@gmail.com')
+	expect(data.status).toBe(true);
+})
+
+test('Test that a transaction can be verified', async () => {
+	const data = await Paystack.transactions.verifyTrx('qp2lr9313q')
 	expect(data.status).toBe(true);
 })
 
