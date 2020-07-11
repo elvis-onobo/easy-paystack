@@ -23,9 +23,9 @@ const Paystack = {
 module.exports = Paystack
 
 
-const initializeTrx = Paystack.transactions.initialize(200, 'rapknowlogy@gmail.com')
+const verifyTrx = Paystack.transactions.verifyTrx('qp2lr9313q')
 
-initializeTrx.then(data => console.log(data))
+verifyTrx.then(data => console.log(data))
 	.catch(err => console.log(err))
 
 /*
