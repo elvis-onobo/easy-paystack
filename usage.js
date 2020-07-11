@@ -47,3 +47,27 @@ const countries = Paystack.misc.countries()
 
 countries.then(data => console.log(data))
 	.catch(err => console.log(err))
+
+
+/*
+ * 
+ * @params : amount, email
+ */
+/**
+ * Initializes a transaction
+ * @params Integer: amount, String: email
+ */
+const initializeTrx = Paystack.transactions.initialize(200, 'rapknowlogy@gmail.com')
+
+initializeTrx.then(data => console.log(data))
+	.catch(err => console.log(err))
+
+/**
+ * Verifies the status of a transaction
+ * @params String :reference
+ */
+const verifyTrx = Paystack.transactions.verifyTrx('qp2lr9313q')
+
+verifyTrx.then(data => console.log(data))
+	.catch(err => console.log(err))
+
