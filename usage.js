@@ -10,7 +10,7 @@ accountOwner.then(data => console.log(data))
 /*
  * resolve a BVN
  */
-const bvnOwner = Paystack.resolveBVN(bvn)
+const bvnOwner = Paystack.verify.resolveBVN(bvn)
 
 bvnOwner.then(data => console.log(data))
 	.catch(err => console.log(err))
