@@ -33,10 +33,11 @@ This is not rigid. You can use appropriate shorter versions of the words as long
 
 `const banks = Paystack.misc.listBanks()`
 
-````
+```
 banks.then(data => console.log(data))
   .catch(err => console.log(err))
 ```
+
 Result: You get the list of banks currently supported by Paystack
 
 An async use would be something like this:
@@ -97,4 +98,7 @@ MIT
 ### Help This Package Get Noticed
 
 You can share this package with your friends and give it a star here on Github.
-````
+
+```
+
+```
