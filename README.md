@@ -85,10 +85,13 @@ List Countries: `misc.countries()`
 Easy Paystack has been built such that you would not need to copy your public and private keys around. All you need to do is to create a .env file in the root of your app and add your keys like so:
 
 PAYSTACK_SECRET_KEY=sk_test**\*\*\*\***\*\*\***\*\*\*\***
+
 PAYSTACK_PUBLIC_KEY=pk_test**\*\*\*\***\*\*\***\*\*\*\***
 
 You may also add your BVN and Card Bin using .env like so when testing:
+
 MY_BVN=\***\*\*\*\*\*\*\***
+
 CARD_BIN=**\*\***
 
 ### Licence
@@ -98,7 +101,3 @@ MIT
 ### Help This Package Get Noticed
 
 You can share this package with your friends and give it a star here on Github.
-
-```
-
-```
