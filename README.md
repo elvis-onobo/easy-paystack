@@ -12,11 +12,8 @@ The goal of the Easy Paystack package is to make working with Paystack APIs as e
 You are welcome to contribute to this package. However, kindly follow this convention:
 
 Kindly stick to the use of async/await
-
 Write a test for for the methods you contribute
-
 Write an example usage for the method you contribute and add it to the usage.js file
-
 Add your methods to the Paystack object to keep sync and maintain the naming convention. The naming convention is as below:
 
 `Paystack.groupName.methodName()`
@@ -33,15 +30,18 @@ This is not rigid. You can use appropriate shorter versions of the words as long
 
 `const banks = Paystack.misc.listBanks()`
 
-`banks.then(data => console.log(data)).catch(err => console.log(err))`
+`banks.then(data => console.log(data))`
+`.catch(err => console.log(err))`
 
 Result: You get the list of banks currently supported by Paystack
 
 An async use would be something like this:
 
-`const someVar = async ()=>{`
-`let result = await Paystack.misc.listBanks()`
-`}`
+```
+const someVar = async ()=>{
+  let result = await Paystack.misc.listBanks()
+}
+```
 
 Result: You get the list of banks currently supported by Paystack
 
@@ -50,19 +50,27 @@ Result: You get the list of banks currently supported by Paystack
 #### Transactions
 
 Initialize transaction: `transactions.initialize(amount, email)`
+
 Verify Transaction: `transactions.verifyTrx(reference)`
+
 List Transactions: `transactions.listTrx()`
+
 Fetch Transaction: `transactions.fetchTrx(id)`
 
 #### Verification
 
 Verify BVN Match: `verify.matchBVN((bvn, accountNumber, bankCode, firstName, lastName)`
+
 Resolve BVN: `verify.resolveBVN(bvn)`
+
 Resolve Account Number: `verify.resolveAccount(bankAccount, bankCode)`
+
 Resolve Card BIN: `verify.resolveCardBin(bin)`
 
-Miscellaneous
+### Miscellaneous
+
 List Banks: `misc.listBanks()`
+
 List Countries: `misc.countries()`
 
 ### Environment Settings
@@ -82,4 +90,4 @@ MIT
 
 ### Help This Package Get Noticed
 
-You can share this package with your friends and give us it a star here on Github.
+You can share this package with your friends and give it a star here on Github.
