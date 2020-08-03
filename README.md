@@ -12,8 +12,11 @@ The goal of the Easy Paystack package is to make working with Paystack APIs as e
 You are welcome to contribute to this package. However, kindly follow this convention:
 
 Kindly stick to the use of async/await
+
 Write a test for for the methods you contribute
+
 Write an example usage for the method you contribute and add it to the usage.js file
+
 Add your methods to the Paystack object to keep sync and maintain the naming convention. The naming convention is as below:
 
 `Paystack.groupName.methodName()`
@@ -30,16 +33,19 @@ This is not rigid. You can use appropriate shorter versions of the words as long
 
 `const banks = Paystack.misc.listBanks()`
 
-`banks.then(data => console.log(data))`
-`.catch(err => console.log(err))`
-
+````
+banks.then(data => console.log(data))
+  .catch(err => console.log(err))
+```
 Result: You get the list of banks currently supported by Paystack
 
 An async use would be something like this:
 
 ```
-const someVar = async ()=>{
+const getListOfBanks = async ()=>{
   let result = await Paystack.misc.listBanks()
+
+  // use result to do somthing else
 }
 ```
 
@@ -67,7 +73,7 @@ Resolve Account Number: `verify.resolveAccount(bankAccount, bankCode)`
 
 Resolve Card BIN: `verify.resolveCardBin(bin)`
 
-### Miscellaneous
+#### Miscellaneous
 
 List Banks: `misc.listBanks()`
 
@@ -91,3 +97,4 @@ MIT
 ### Help This Package Get Noticed
 
 You can share this package with your friends and give it a star here on Github.
+````
